@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6553851387351102332}
   - component: {fileID: 713682543275917867}
   - component: {fileID: 6282424139932574621}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,6 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   rigidbody: {fileID: 0}
+  laserLineRenderer: {fileID: 0}
+  weaponOrigin: {fileID: 0}
 --- !u!136 &713682543275917867
 CapsuleCollider:
   m_ObjectHideFlags: 0
