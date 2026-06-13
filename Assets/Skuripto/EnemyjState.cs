@@ -1,31 +1,50 @@
-using UnityEngine;
 using Core.Interface;
-namespace TPSRoguelite.InGame.Enemy
+using InGame.Data;
+using UnityEngine;
+using UnityEngine.Events;
+using InGame.Data; // EnemyDataを使うために追加
+
+namespace InGame.Enemy
 {
-
-    public class EnemyjState : MonoBehaviour,IDamageable
+    public class EnemyState : MonoBehaviour, IDamageable
     {
+        // Inspectorでカセットをセットしつつ、他のプログラムからは「読み取り（Get）」だけできるように公開する
+        [field: SerializeField] public EnemyData EnemyDataAsset { get; private set; }
 
-
-        private const int MAX_HP = 100;
         public int CurrentHP { get; private set; }
 
-        private void Awake()
+        public event UnityAction<EnemyState> OnReturnToPoolAction;
+
+        private void OnEnable()
         {
-            CurrentHP = MAX_HP;
+            // カセットがセットされていれば、そのカセットの最大HPを読み込む
+            if (EnemyDataAsset != null)
+            {
+                CurrentHP = EnemyDataAsset.MaxHp;
+            }
+            else
+            {
+                Debug.LogError("EnemyDataがセットされていません！");
+            }
         }
+
         public void TakeDamage(int damageAmount)
         {
-            //マイナスのダメージ（回復） を防ぐ
+            // マイナスのダメージ（回復）を防ぐ
             if (damageAmount <= 0)
             {
                 return;
-
-
             }
 
             CurrentHP -= damageAmount;
-           Debug.Log($"敵に「damageAmount］のダメージ！残りHP:ICurrentHP");
+            Debug.Log($"{EnemyDataAsset.EnemyName}に{damageAmount}のダメージ！残りHP:{CurrentHP}");
+        }
+
+        private void Die()
+        {
+            Debug.Log($"{EnemyDataAsset.EnemyName}を倒しました");
+            gameObject.SetActive(false);
+            OnReturnToPoolAction?.Invoke(this);
         }
     }
 }
