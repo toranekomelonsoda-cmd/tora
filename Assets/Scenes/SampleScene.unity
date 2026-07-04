@@ -961,6 +961,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1912979110 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3991753319464071774, guid: 09765d493ad833a4db1eae52bef8e09f, type: 3}
+  m_PrefabInstance: {fileID: 4739946073795459754}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2017571631
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,6 +1191,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6553851387351102332, guid: 09765d493ad833a4db1eae52bef8e09f, type: 3}
+      propertyPath: weponOrigin
+      value: 
+      objectReference: {fileID: 1912979110}
+    - target: {fileID: 6553851387351102332, guid: 09765d493ad833a4db1eae52bef8e09f, type: 3}
+      propertyPath: CurrentWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e7858740f6f8a2488cfa66fdc4b58bb, type: 2}
     - target: {fileID: 8497662359598147214, guid: 09765d493ad833a4db1eae52bef8e09f, type: 3}
       propertyPath: m_Name
       value: player

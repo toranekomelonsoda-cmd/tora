@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 180a0fd2a30dd694fa65182065077e4d, type: 3}
-  m_Name: WeaPonDDA
+  m_Name: FullAuto
   m_EditorClassIdentifier: Assembly-CSharp::TSPRoguelite.ffInGame.Data.WeaponData
-  <WeaponName>k__BackingField: 
-  <WeaponFireType>k__BackingField: 0
-  <AttackPower>k__BackingField: 310
-  <FireInterval>k__BackingField: 0
+  <WeaponName>k__BackingField: FullAuto
+  <WeaponFireType>k__BackingField: 2
+  <AttackPower>k__BackingField: 2
+  <FireInterval>k__BackingField: 0.1
   <FireRate>k__BackingField: 0
   <MaxAmmo>k__BackingField: 0
   <ReloadTime>k__BackingField: 0

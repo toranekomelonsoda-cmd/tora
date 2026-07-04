@@ -249,8 +249,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   rigidbody: {fileID: 6282424139932574621}
+  weponOrigin: {fileID: 0}
   laserLineRenderer: {fileID: 5275397349511543555}
-  weaponOrigin: {fileID: 3991753319464071774}
+  CurrentWeapon: {fileID: 11400000, guid: 2e7858740f6f8a2488cfa66fdc4b58bb, type: 2}
 --- !u!136 &713682543275917867
 CapsuleCollider:
   m_ObjectHideFlags: 0
